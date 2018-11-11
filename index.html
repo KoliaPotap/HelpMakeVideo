@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+
+      <meta charset="utf-8">
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/jcanvas/21.0.1/jcanvas-crescents.js">  </script>
+
+		<script
+		  src="https://code.jquery.com/jquery-2.2.4.min.js"
+		  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+		  crossorigin="anonymous"></script>
+
+
+
+			<style>#canvasPHO{
+					         background-repeat: no-repeat;
+								   background-position: center;}</style>
+
+
+	<title>GoEditPho</title>
+</head>
+<body>
+  		<div id="mySidenav" class="sidenav">
+  				<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+					<a>drop img here\click &#8595;	</a>
+					<div class="uploader" onclick="$('#filePhoto').click()">
+    <input type="file" name="userprofile_picture"  id="filePhoto" />
+</div>
+
+
+<br>
+  <button class="button" onclick="goFullScreen();">Go Fullscreen or F11</button>
+<br>
+
+<div>
+
+ <button onclick="noImages()" class='button'>No images button</button><br>
+  <input type="radio"  class="radiochoose" name="season"  id="myCheck" onchange="Kalipso('ZoomOUT()')">ZOOM OUT</input ><br>
+  <input type="radio" class="radiochoose" name="season"  id="myCheck" onchange="Kalipso('ZoomIN()')">ZOOM IN</input ></div>
+	<!--<input type="radio" class="radiochoose" name="season" id="myCheck" onchange="Kalipso('freeMode()')">Free mode</input ><br> -->
+	<input type="radio" class="radiochoose" name="season" id="myCheck" onchange="Kalipso('myGalary()')">Moving Gallery</input ><br>
+	<input type="radio" class="radiochoose" name="season" id="myCheck3" onchange="KalipsoR()">LeftSideImageRightText</input ><br>
+	<input type="radio" class="radiochoose" name="season" id="myCheck" onchange="KalipsoDraw(true)">Drawing mode with hand</input ><br>
+	<input type="radio" class="radiochoose" name="season" id="myCheck" onchange="KalipsoDraw(false)">Drawing mode without hand</input ></div>
+
+
+
+</div>
+
+
+
+
+
+          <span style="font-size:25px;position: absolute;top: 0px;cursor:pointer" onclick="openNav()"><</span>
+					<div id="MovingGalar"></div>
+          <div id="MovingGalarR"></div>
+          <canvas id="canvasPHO" style="margin-top: 17px;" width="1600" height="1000"></canvas>
+
+
+	<script src="./js/code.js"></script>
+	<script src="./js/dropzone.js"></script>
+	<script src="./js/drawing.js"></script>
+	<script src="./js/zoominout.js"></script>
+	<script src="./js/drawingwithouthand.js"></script>
+
+
+</body>
+</html>
