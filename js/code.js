@@ -186,7 +186,7 @@ function LeftSideImageRightText() {
               setInterval(function () {
 
                     ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
-                    
+
                     ctx.drawImage(imag, -2,0, imag.width   , imag.height );
                     var str1 = imageT[0] + " ";
                     var str2 = imageT[1] + " ";
@@ -313,13 +313,12 @@ var imag = document.createElement("img");
 
 function FORICKA(r) {
 
-
-for (var i = 0; i < images.length; i++) {
+for (var i = 0; i < images.length ; i++) {
      var valuess = document.getElementsByClassName("searchTxt")[i].value;
-     textoo.push(valuess);    }
+     textoo.push(valuess);}
 for (var t = 0; t < r; t++) {
      var aaasd = document.getElementsByClassName("imageT")[t].value;
-     imageT.push(aaasd);       }
+     imageT.push(aaasd);      }
 
 imag.setAttribute('width', canv.width);
 imag.setAttribute('height', canv.height);

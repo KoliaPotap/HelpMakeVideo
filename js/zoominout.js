@@ -1,4 +1,5 @@
-
+currentImage = 0;
+currentText = 0;
 function ZoomIN() {
   cancelzoomin = false;
 
@@ -14,8 +15,7 @@ function ZoomIN() {
 
 FORICKA(7);
 
-currentImage = 0;
-currentText = 0;
+
       switchImage();
         setInterval(switchImage,imageT[6] * 1000);
 
@@ -25,7 +25,9 @@ currentText = 0;
             setInterval(function() {
                 x = 1;
                   return function () {
-
+                 if (currentText == images.length) {
+                   currentText = 0;
+                 }
                     ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
                     ctx.drawImage(imag, 0 - x ,0 - x , canv.width + x, canv.height + x);
                     var str1 = imageT[0] + " ";
@@ -36,7 +38,7 @@ currentText = 0;
                     ctx.fillStyle = imageT[5];
                     ctx.fillText(textoo[currentText],imageT[4],imageT[3]);
 
-
+console.log("currentText : " + currentText);
                     x += 1;
                   };
                 }(), 1000/15);
@@ -59,8 +61,7 @@ function ZoomOUT() {
      canceldrawing2 = true;
      cancelzoomin = true;
      cancelmyGalary = true;
-  currentImage = 0;
-  currentText = 0;
+
   FORICKA(7);
       switchImage();
         setInterval(switchImage,imageT[6] * 1000);
