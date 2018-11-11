@@ -169,12 +169,12 @@ return false;
 
 }
 
-var textlolo = [30, 120, 200, 300];
+var textlolo = [30, 120, 210, 300];
 
 function LeftSideImageRightText() {
   currentImage = 0;
   currentText = 0;
-  FORICKA(5);
+  FORICKAR(5);
 
       switchImage();
         setInterval(switchImage,imageT[4] * 1000);
@@ -182,29 +182,30 @@ function LeftSideImageRightText() {
         function   switchImage()    {
 
             imag.setAttribute('src',images[currentImage]);
-            setInterval(function() {
-                x = 1;
-                  return function () {
+            setInterval(function() {         var xota = 0,speedOFnewT = 3;        //SPEED OF THE NEXT TEXT POP UP
+              setInterval(function () {
 
                     ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
-                    ctx.drawImage(imag, -2,0, imag.width , imag.height);
+                    
+                    ctx.drawImage(imag, -2,0, imag.width   , imag.height );
                     var str1 = imageT[0] + " ";
                     var str2 = imageT[1] + " ";
-                    var str3 =   "90px ";
+                    var str3 =   "40px ";
                     var toska = str1.concat(str3,str2);
 
                    ctx.fillStyle = imageT[2];
                     ctx.fillRect(canv.width / 2, 0, canv.width / 2, canv.height );
                                         ctx.fillStyle="black";
 
-                    ctx.fillRect(canv.width / 2, 0, 2, canv.height );
-                     ctx.font = toska;
-                    ctx.fillStyle = imageT[3];
-                   for (var i = 0; i < textoo.length; i++)
-                   {    ctx.fillText(textoo[i], canv.width / 2 + 50, canv.height / 4 + textlolo[i]);      }
-
-                    x += 5;
-                  };
+                    ctx.fillRect(canv.width / 2, 0, 1, canv.height );
+                        ctx.font = toska;
+                          ctx.fillStyle = imageT[3];
+        //   console.log(textoo);
+                        for (var i = 0; i < xota; i++)
+                        {    ctx.fillText(textoo[i], canv.width / 2 + 50, canv.height / 6 + textlolo[i]);      }
+                      if (xota == textoo.length) {          xota = 0;      };
+                    xota++;
+                  },speedOFnewT*1000);
                 }(), 1000/15);
           currentImage++; currentText++;
           if (currentImage == images.length) {
@@ -325,6 +326,19 @@ imag.setAttribute('height', canv.height);
 }
 
 
+function FORICKAR(r) {
+
+
+for (var i = 0; i < 4; i++) {
+     var valuess = document.getElementsByClassName("searchTxt")[i].value;
+     textoo.push(valuess);    }
+for (var t = 0; t < r; t++) {
+     var aaasd = document.getElementsByClassName("imageT")[t].value;
+     imageT.push(aaasd);       }
+
+imag.setAttribute('width', canv.width);
+imag.setAttribute('height', canv.height);
+}
 
 
 
@@ -372,17 +386,17 @@ if (document.getElementById('myCheck3').checked = true) {
 
 
   var palatabold = "<select class='imageT'><option>bold</option><option>bolder</option><option>normal</option><option>lighter</option></select>";
-var  palatast = "<select class='imageT'><option>Arial</option><option>sans-serif</option><option>Courier New</option><option>Times New Roman</option><option>Comic Sans MS</option><option>Verdana</option></select>";
+var  palatast = "<select class='imageT' ><option>Arial</option><option>sans-serif</option><option>Courier New</option><option>Times New Roman</option><option>Comic Sans MS</option><option>Verdana</option></select>";
 
-    var palata = "<label>square color</label><select class='imageT'><option>red</option><option>white</option><option>black</option><option>blue</option></select>";
+    var palata = "<label>square color</label><select class='imageT' ><option>red</option><option selected>white</option><option>black</option><option>blue</option></select>";
 
-var palataCOLOR = "<select class='imageT'><option>red</option><option>white</option><option>black</option><option>blue</option></select>";
-var speed = "<input class='imageT' type = 'text' placeholder='interval, image time(sec, 10 is optimal)' value='10'></input>";
-var palata1 = "<input class='searchTxt' type = 'text' placeholder='text on image'></input><input class='searchTxt' type = 'text' placeholder='text on image'></input><input class='searchTxt' type = 'text' placeholder='text on image'></input>";
-
+var palataCOLOR = "<select class='imageT' ><option>red</option><option>white</option><option selected>black</option><option>blue</option></select>";
+var speed = "<input class='imageT' type = 'text' placeholder='interval, image time(sec, 10 is optimal)' value='15'></input>";
+var palata1 = "<input class='searchTxt' type = 'text' placeholder='text on image'></input>    <input class='searchTxt' type = 'text' placeholder='text on image'></input>";
+var lopata  = "<input class='searchTxt' type = 'text' placeholder='text on image'></input>    <input class='searchTxt' type = 'text' placeholder='text on image'></input>";
 
 var palata2 = "<button value='Submit'  class='button' onclick=' LeftSideImageRightText()'>click</button>";
-var toska = palatabold.concat(palatast,palata,palataCOLOR,speed,palata1,palata2);
+var toska = palatabold.concat(palatast,palata,palataCOLOR,speed,palata1,lopata,palata2);
 
 document.getElementById('MovingGalarR').innerHTML = toska;
   } else {
