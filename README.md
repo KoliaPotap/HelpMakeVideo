@@ -9,6 +9,7 @@ It has
 - Left side IMAGE and right side text 
 (upto 4 rows, because 5 is too much for one info image)
 - Drawing with hand and without. You can make similar to those infographics videos.
+- ANIMATION FOR TEXT : one after another and typing
 
 # Technology Stack
 plain js and html canvas
@@ -16,7 +17,6 @@ plain js and html canvas
 # Roadmap
 
 Now I have new ideas that will implement in next weeks. 
-- Moving text without images
 - free mode
 - maybe svg
 
