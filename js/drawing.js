@@ -18,7 +18,7 @@ var cancelmyGalary = new Boolean(true);
 
 function DrawMode2(){
 
-    var canceldrawing1 = false ;
+      var canceldrawing1 = false ;
     if (canceldrawing1) {
         return;
       }
@@ -157,6 +157,7 @@ if (g == true) {
   var text = "<h4 style='float: right;  top: -3;'>S - save drawing R - run   C - clean</h4>"
 }
 var toska = palatabold.concat(palatast,palata,speed,video,text);
+
 
 document.getElementById("MovingGalar").innerHTML = toska;
   } else {

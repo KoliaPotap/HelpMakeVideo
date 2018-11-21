@@ -43,14 +43,18 @@
 	<input type="radio" class="radiochoose" name="season" id="myCheck" onchange="Kalipso('myGalary()')">Moving Gallery</input ><br>
 	<input type="radio" class="radiochoose" name="season" id="myCheck3" onchange="KalipsoR()">LeftSideImageRightText</input ><br>
 	<input type="radio" class="radiochoose" name="season" id="myCheck" onchange="KalipsoDraw(true)">Drawing mode with hand</input ><br>
-	<input type="radio" class="radiochoose" name="season" id="myCheck" onchange="KalipsoDraw(false)">Drawing mode without hand</input ></div>
+	<input type="radio" class="radiochoose" name="season" id="myCheck" onchange="KalipsoDraw(false)">Drawing mode without hand</input ><br>
+	<input type="radio" class="radiochoose" name="season" id="myCheck" onchange="KalTEXT()">Text</input ></div>
 
 
 
 </div>
 
 
+<div id="myModal" class="modal">
 
+	<!-- Modal content -->
+	<div class="modal-content">	<span class="close">&times;</span><div id="bcontent" style="position:left;"></div>	</div></div>
 
 
           <span style="font-size:25px;position: absolute;top: 0px;cursor:pointer" onclick="openNav()"><</span>
@@ -58,12 +62,31 @@
           <div id="MovingGalarR"></div>
           <canvas id="canvasPHO" style="margin-top: 17px;" width="1600" height="1000"></canvas>
 
+<script>
+
+	var modal = document.getElementById('myModal');
+	var span = document.getElementsByClassName("close")[0];
+	var modalion = document.getElementById("bcontent");
+
+	span.onclick = function() {
+			modal.style.display = "none";
+	}
+	window.onclick = function(event) {
+			if (event.target == modal) {
+					modal.style.display = "none";			}}
+	</script>
+
 
 	<script src="./js/code.js"></script>
 	<script src="./js/dropzone.js"></script>
+	<script src="./js/text.js"></script>
+
 	<script src="./js/drawing.js"></script>
 	<script src="./js/zoominout.js"></script>
 	<script src="./js/drawingwithouthand.js"></script>
+
+
+
 
 
 </body>

@@ -43,16 +43,13 @@ var imageLoader = document.getElementById('filePhoto');
 
 
 
+var img = new Image();
 
-
-    var img = new Image();
 function handleImage(e) {
     var reader = new FileReader();
     reader.onload = function (l) {
 
-
-    //    document.getElementById('photon').innerHTML += '<img src="' + l.target.result + '">';
-     img.src = l.target.result;
+    img.src = l.target.result;
     images.push(l.target.result);
     localStorage.setItem("imagesAA", JSON.stringify(images));
 
@@ -63,13 +60,6 @@ function handleImage(e) {
    }
 
 }
-
-
-
-
-
-//...
-
 
 
 function goFullScreen(){

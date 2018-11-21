@@ -1,7 +1,11 @@
 currentImage = 0;
 currentText = 0;
 function ZoomIN() {
-  cancelzoomin = false;
+  x = 0;currentText = (textoo.length - 1);
+
+  modal.style.display = "none";
+  goFullScreen();
+    cancelzoomin = false;
 
   if (cancelzoomin) {
       return;
@@ -23,7 +27,6 @@ FORICKA(7);
 
             imag.setAttribute('src',images[currentImage]);
             setInterval(function() {
-                x = 1;
                   return function () {
                  if (currentText == images.length) {
                    currentText = 0;
@@ -51,7 +54,11 @@ console.log("currentText : " + currentText);
 
 
 function ZoomOUT() {
-  cancelzoomout = false;
+  modal.style.display = "none";
+  goFullScreen();
+  x = 0;currentText = (textoo.length - 1);
+
+    cancelzoomout = false;
 
   if (cancelzoomout) {
       return;
@@ -70,7 +77,6 @@ function ZoomOUT() {
 
             imag.setAttribute('src',images[currentImage]);
             setInterval(function() {
-                x = 1;
                   return function () {
 
                     ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
